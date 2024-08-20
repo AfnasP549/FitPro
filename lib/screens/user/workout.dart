@@ -1,13 +1,12 @@
-import 'dart:async'; // Import for Timer
-import 'package:fitpro/models/advanced_model/advancedWorkout_model.dart';
-import 'package:fitpro/models/beginner_model/beginnerWorkout_model.dart';
+import 'dart:async'; 
+import 'package:fitpro/widget/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 class Workout extends StatefulWidget {
    final List<dynamic> workoutList;
-
+   
   const Workout({super.key, required this.workoutList});
 
   @override
@@ -45,7 +44,7 @@ class _ExcerciseDetailsState extends State<Workout> {
 
       if (_start == 0) {
         timer.cancel();
-        _nextWorkout(); // Automatically go to the next workout
+        _nextWorkout(); 
       } else {
         setState(() {
           _start--;
@@ -68,7 +67,6 @@ class _ExcerciseDetailsState extends State<Workout> {
         _updateVideo();
         _resetTimer();
       } else {
-        // Handle when the workout list ends, e.g., show a completion message or navigate to a different screen
       }
     });
   }
@@ -103,7 +101,7 @@ class _ExcerciseDetailsState extends State<Workout> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 32, 32, 32),
+      backgroundColor: MyColors.clr1,
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: SafeArea(
