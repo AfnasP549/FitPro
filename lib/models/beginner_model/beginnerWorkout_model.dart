@@ -1,4 +1,5 @@
-import 'package:fitpro/models/profile_model/profile_model.dart';
+// ignore_for_file: file_names
+
 import 'package:hive_flutter/adapters.dart';
 part 'beginnerWorkout_model.g.dart';
 
@@ -14,15 +15,15 @@ class BeginnerWorkoutModel {
   final String description;
   @HiveField(4)
   final String duration;
-  
-  // @HiveField(5)
-  
+  @HiveField(5)
+  bool isFavorite;
 
   BeginnerWorkoutModel(
       {required this.url,
       required this.name,
       required this.description,
       required this.duration,
+      this.isFavorite = false, 
       this.id});
 }
 

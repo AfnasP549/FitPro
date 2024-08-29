@@ -1,5 +1,9 @@
 import 'package:fitpro/db_functions/database_db.dart';
 import 'package:fitpro/models/advanced_model/advancedWorkout_model.dart';
+import 'package:fitpro/screens/admin/adminhome.dart';
+import 'package:fitpro/widget/colors.dart';
+import 'package:fitpro/widget/customTextFormField.dart';
+import 'package:fitpro/widget/custom_appbar.dart';
 import 'package:flutter/material.dart';
 
 class AdvancedEdit extends StatefulWidget {
@@ -38,107 +42,100 @@ class _AdminAdvancedEditState extends State<AdvancedEdit> {
     super.dispose();
   }
 
-  Future<void> _saveDetails() async {
-    if (_formKey.currentState!.validate()) {
-      Navigator.of(context).pop();
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('ADVANCED EDIT'),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Center(
-          child: Form(
-            key: _formKey,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                TextFormField(
-                  controller: _urlController,
-                  decoration: const InputDecoration(
+      backgroundColor: MyColors.Black,
+      appBar: customAppBar(context, text1: 'ADVANCED', back: true),
+      body: GestureDetector(
+        onTap: () {
+          FocusScope.of(context).unfocus();
+        },
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Center(
+            child: Form(
+              key: _formKey,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  CustomTextFormField(
                     labelText: 'Url',
-                    border: OutlineInputBorder(),
-                  ),
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return "Please enter your url";
-                    } else {
+                    controller: _urlController,
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Please enter your url';
+                      }
                       return null;
-                    }
-                  },
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                TextFormField(
-                  controller: _nameController,
-                  decoration: const InputDecoration(
+                    },
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  CustomTextFormField(
                     labelText: 'Name',
-                    border: OutlineInputBorder(),
-                  ),
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return "Please enter your name";
-                    } else {
+                    controller: _nameController,
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Please enter your name';
+                      }
                       return null;
-                    }
-                  },
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                TextFormField(
-                  controller: _descriptionController,
-                  decoration: const InputDecoration(
+                    },
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  CustomTextFormField(
                     labelText: 'Description',
-                    border: OutlineInputBorder(),
-                  ),
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return "Please enter your description";
-                    } else {
+                    controller: _descriptionController,
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Please enter your Description';
+                      }
                       return null;
-                    }
-                  },
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                TextFormField(
-                  controller: _durationController,
-                  decoration: const InputDecoration(
+                    },
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  CustomTextFormField(
                     labelText: 'Duration',
-                    border: OutlineInputBorder(),
-                  ),
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return "Please enter your duration";
-                    } else {
+                    controller: _durationController,
+                    keyboardTYpe: TextInputType.number,
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Please enter your Duration';
+                      }
                       return null;
-                    }
-                  },
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    final workout = AdvancedWorkoutModel(
-                        url: _urlController.text,
-                        name: _nameController.text,
-                        description: _descriptionController.text,
-                        duration: _durationController.text);
-                    advancedEditWorkout(workout, widget.index);
-                    Navigator.pop(context);
-                  },
-                  child: const Text('Save'),
-                )
-              ],
+                    },
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: MyColors.White,
+                    ),
+                    onPressed: () {
+                      if (_formKey.currentState?.validate() ?? false) {
+                        final workout = AdvancedWorkoutModel(
+                            url: _urlController.text,
+                            name: _nameController.text,
+                            description: _descriptionController.text,
+                            duration: _durationController.text);
+                        advancedEditWorkout(workout, widget.index);
+                        Navigator.pop(context);
+                      }
+                      showSnackBar(context, 'Workout edited successfully!');
+                    },
+                    child: const Text(
+                      'UPDATE',
+                      style: TextStyle(
+                          color: MyColors.DBlack, fontWeight: FontWeight.bold),
+                    ),
+                  )
+                ],
+              ),
             ),
           ),
         ),

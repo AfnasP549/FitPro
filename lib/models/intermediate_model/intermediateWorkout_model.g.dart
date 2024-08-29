@@ -22,13 +22,14 @@ class IntermediateWorkoutModelAdapter
       name: fields[2] as String,
       description: fields[3] as String,
       duration: fields[4] as String,
+      isFavorite: fields[5] as bool,
     )..id = fields[0] as int?;
   }
 
   @override
   void write(BinaryWriter writer, IntermediateWorkoutModel obj) {
     writer
-      ..writeByte(5)
+      ..writeByte(6)
       ..writeByte(0)
       ..write(obj.id)
       ..writeByte(1)
@@ -38,7 +39,9 @@ class IntermediateWorkoutModelAdapter
       ..writeByte(3)
       ..write(obj.description)
       ..writeByte(4)
-      ..write(obj.duration);
+      ..write(obj.duration)
+      ..writeByte(5)
+      ..write(obj.isFavorite);
   }
 
   @override

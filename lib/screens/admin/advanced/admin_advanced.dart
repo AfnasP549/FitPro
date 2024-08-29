@@ -2,7 +2,11 @@ import 'package:fitpro/db_functions/database_db.dart';
 import 'package:fitpro/models/advanced_model/advancedWorkout_model.dart';
 import 'package:fitpro/screens/admin/advanced/advanced_add.dart';
 import 'package:fitpro/screens/admin/advanced/advanced_edit.dart';
+import 'package:fitpro/widget/colors.dart';
+import 'package:fitpro/widget/custom_appbar.dart';
+import 'package:fitpro/widget/delete_alert.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class AdminAdvanced extends StatefulWidget {
   const AdminAdvanced({super.key,});
@@ -20,13 +24,16 @@ class _AdvancedState extends State<AdminAdvanced> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('ADVANCED')),
+      backgroundColor: MyColors.Black,
+      appBar: customAppBar(context, text1: 'ADVANCED',back: true),
       floatingActionButton: FloatingActionButton(
+        backgroundColor: MyColors.White,
         onPressed: () {
           Navigator.push(
               context,
               MaterialPageRoute(
-                  builder: (ctx) => AdvancedAdd(workoutModel: AdvancedWorkoutModel,)));
+                  builder: (ctx) => AdvancedAdd(
+                    workoutModel: AdvancedWorkoutModel,)));
         },
         child: const Icon(Icons.add),
       ),
@@ -42,11 +49,18 @@ class _AdvancedState extends State<AdminAdvanced> {
                   padding: const EdgeInsets.all(16.0),
                   child: Container(
                     decoration: BoxDecoration(
+                      color: MyColors.DBlack,
                       border: Border.all(),
                     ),
                     child: ListTile(
-                      title: Text(data.name),
-                      subtitle: Text(data.duration),
+                      title: Text(data.name,
+                      style: const TextStyle(
+                        color: MyColors.White,
+                      ),),
+                      subtitle: Text(data.duration,
+                      style: const TextStyle(
+                        color: MyColors.White,
+                      ),),
                       trailing: Wrap(
                         children: [
                           IconButton(
@@ -59,20 +73,19 @@ class _AdvancedState extends State<AdminAdvanced> {
                                advancedGetAllWorkout();
                               },
                               icon: const Icon(
-                                Icons.edit,
-                                color: Colors.blue,
+                                 FontAwesomeIcons.penToSquare,
+                            color: MyColors.Orange,
                               )),
                           const SizedBox(
                             width: 20,
                           ),
                           IconButton(
                               onPressed: () {
-                                advancedDeleteWorkout(index);
-                                advancedGetAllWorkout();
+                                showDeleteDialog(index, context);
                               },
                               icon: const Icon(
-                                Icons.delete,
-                                color: Colors.red,
+                                 FontAwesomeIcons.trashCan,
+                            color:MyColors.Red,
                               ))
                         ],
                       ),

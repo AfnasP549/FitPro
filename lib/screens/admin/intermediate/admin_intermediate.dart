@@ -1,19 +1,20 @@
 import 'package:fitpro/db_functions/database_db.dart';
-import 'package:fitpro/models/beginner_model/beginnerWorkout_model.dart';
 import 'package:fitpro/models/intermediate_model/intermediateWorkout_model.dart';
-import 'package:fitpro/screens/admin/beginner/admin_beginner_add.dart';
-import 'package:fitpro/screens/admin/beginner/admin_beginner_edit.dart';
 import 'package:fitpro/screens/admin/intermediate/intermediate_add.dart';
 import 'package:fitpro/screens/admin/intermediate/intermediate_edit.dart';
+import 'package:fitpro/widget/colors.dart';
+import 'package:fitpro/widget/custom_appbar.dart';
+import 'package:fitpro/widget/delete_alert.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class AdminIntermediate extends StatefulWidget {
   const AdminIntermediate({super.key,});
   @override
-  State<AdminIntermediate> createState() => _AdminBeginnerState();
+  State<AdminIntermediate> createState() => _AdminintermediateState();
 }
 
-class _AdminBeginnerState extends State<AdminIntermediate> {
+class _AdminintermediateState extends State<AdminIntermediate> {
   @override
   void initState() {
     intermediateGetAllWorkout();
@@ -23,8 +24,10 @@ class _AdminBeginnerState extends State<AdminIntermediate> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('INTERMEDIATE')),
+      backgroundColor: MyColors.Black,
+      appBar: customAppBar(context, text1: 'INTERMEDIATE',back: true),
       floatingActionButton: FloatingActionButton(
+        backgroundColor: MyColors.White,
         onPressed: () {
           Navigator.push(
               context,
@@ -45,11 +48,22 @@ class _AdminBeginnerState extends State<AdminIntermediate> {
                   padding: const EdgeInsets.all(16.0),
                   child: Container(
                     decoration: BoxDecoration(
-                      border: Border.all(),
+                      border: Border.all(
+                        color: MyColors.Black,
+                      ),
+                      color: MyColors.DBlack,
                     ),
                     child: ListTile(
-                      title: Text(data.name),
-                      subtitle: Text(data.duration),
+                      title: Text(data.name,
+                       style: const TextStyle(
+                    color: MyColors.White,
+                  ),
+                      ),
+                      subtitle: Text(data.duration,
+                       style: const TextStyle(
+                    color: MyColors.White,
+                  ),
+                      ),
                       trailing: Wrap(
                         children: [
                           IconButton(
@@ -62,20 +76,19 @@ class _AdminBeginnerState extends State<AdminIntermediate> {
                                intermediateGetAllWorkout();
                               },
                               icon: const Icon(
-                                Icons.edit,
-                                color: Colors.blue,
+                                FontAwesomeIcons.penToSquare,
+                            color: MyColors.Orange,
                               )),
                           const SizedBox(
                             width: 20,
                           ),
                           IconButton(
                               onPressed: () {
-                               intermediateDeleteWorkout(index);
-                                intermediateGetAllWorkout();
+                             showDeleteDialog( index, context );
                               },
                               icon: const Icon(
-                                Icons.delete,
-                                color: Colors.red,
+                                 FontAwesomeIcons.trashCan,
+                            color:MyColors.Red,
                               ))
                         ],
                       ),

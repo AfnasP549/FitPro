@@ -28,6 +28,7 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  carousel_slider: ^5.0.0
   cupertino_icons: ^1.0.6
   curved_navigation_bar: ^1.0.6
   flutter:
@@ -37,6 +38,7 @@ dependencies:
   hive: ^2.2.3
   hive_flutter: ^1.1.0
   image_picker: ^1.1.2
+  percent_indicator: ^4.2.3
   youtube_player_flutter: ^9.0.1
   youtube_video_player: ^0.1.1
 
@@ -60,22 +62,30 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - images/splashscreen.png
-    - images/FULLBODY-removebg-preview.png
+    #- images/FULLBODY-removebg-preview.png
     - images/BEGINNER.jpg
     - images/INTERMEDIATE.jpeg
     - images/ADVANCED.png
-    - images/Jumping jacks.gif
-    - images\ABDOMINAL-CRUNCHES.gif
-    - images\RUSSIAN-TWIST.gif
-    - images\MOUNTAIN-CLIMBER.gif
-    - images\HEEL-TOUCH.gif
-    - images\LEG-RAISES.gif
-    - images\PLANK-.gif
-    - images\COBRA-STRETCH.gif
-    - images\SPINE-LEFT.gif
-    - images\SPINE-RIGHT.gif
     - images\avatar.jpeg
     - images\Home.png
+    - images/Bmi1.jpg
+    - images/Bmi2.jpg
+    - images/Bmi3.jpg
+    - images/Diet1.jpg
+    - images/Diet2.jpg
+    - images/Diet3.jpg
+    - images/Diet4.jpg
+    - images/Getready.png
+    - images/BEGINNER1.png
+    - images/INTERMEDIATE2.png
+    - images/ADVANCED3.png
+    - images/HOME1.png
+    - images/HOME2.png
+    - images/DietTracker.png
+    - images/AdminBeginner.png
+    - images/AdminIntermediate.png
+    - images/AdminAdvanced.png
+    
     # images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see

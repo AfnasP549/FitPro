@@ -1,11 +1,11 @@
 // ignore_for_file: file_names
 
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
-import 'package:fitpro/screens/user/settings.dart';
-import 'package:fitpro/screens/user/report.dart';
+import 'package:fitpro/screens/user/bmi.dart';
 import 'package:fitpro/screens/user/diet_screen.dart';
-import 'package:fitpro/screens/user/fovourite.dart';
+import 'package:fitpro/screens/user/history.dart';
 import 'package:fitpro/screens/user/home.dart';
+import 'package:fitpro/widget/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -21,10 +21,9 @@ int _currentIndex = 0;
 class _BottomnavigationbarState extends State<Bottomnavigationbar> {
   List<Widget> Pages = [
     const Home(),
-    const Favourite(),
-     Report(),
-     const Dietscreen(),
-    const Settings()
+     const Bmi(),
+     const DietScreen(),
+      const History(),
   ];
   @override
   Widget build(BuildContext context) {
@@ -32,7 +31,7 @@ class _BottomnavigationbarState extends State<Bottomnavigationbar> {
       bottomNavigationBar: CurvedNavigationBar(
           index: _currentIndex,
           animationDuration: const Duration(milliseconds: 200),
-          backgroundColor: Colors.black,
+          backgroundColor: MyColors.Black,
           color: const Color.fromARGB(255, 38, 38, 38),
           onTap: (value) {
             setState(() {
@@ -41,23 +40,19 @@ class _BottomnavigationbarState extends State<Bottomnavigationbar> {
           },
           items: const [
             Icon(
-              Icons.home,
+              FontAwesomeIcons.house,
               color: Colors.white,
             ),
             Icon(
-              Icons.favorite,
+             FontAwesomeIcons.weightScale,
               color: Colors.white,
             ),
             Icon(
-              Icons.report,
+              FontAwesomeIcons.bowlFood,
               color: Colors.white,
             ),
             Icon(
-              FontAwesomeIcons.utensils,
-              color: Colors.white,
-            ),
-            Icon(
-              Icons.settings,
+              FontAwesomeIcons.clockRotateLeft,
               color: Colors.white,
             ),
           ]),

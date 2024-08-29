@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:hive_flutter/adapters.dart';
 part 'intermediateWorkout_model.g.dart';
 
@@ -13,10 +15,14 @@ class IntermediateWorkoutModel {
   final String description;
   @HiveField(4)
   final String duration;
+    @HiveField(5)
+  bool isFavorite;
+
 
   IntermediateWorkoutModel(
       {required this.url,
       required this.name,
       required this.description,
-      required this.duration});
+      required this.duration,
+      this.isFavorite = false, });
 }

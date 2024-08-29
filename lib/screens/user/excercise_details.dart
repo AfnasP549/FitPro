@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_typing_uninitialized_variables
 
+import 'package:fitpro/widget/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
@@ -40,11 +41,12 @@ class _ExcerciseDetailsState extends State<ExcerciseDetails> {
     _youtubeVideoController.dispose();
     super.dispose();
   }
+  
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 32, 32, 32),
+      backgroundColor: MyColors.Black,
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: SafeArea(
@@ -60,7 +62,7 @@ class _ExcerciseDetailsState extends State<ExcerciseDetails> {
               Text(
                 widget.name,
                 style: const TextStyle(
-                    color: Colors.amber,
+                    color: MyColors.White,
                     fontSize: 20,
                     fontWeight: FontWeight.bold),
               ),
@@ -72,7 +74,7 @@ class _ExcerciseDetailsState extends State<ExcerciseDetails> {
                 child: Text(
                   widget.description,
                   style: const TextStyle(
-                      color: Colors.white,
+                      color: MyColors.White,
                       fontSize: 15,
                       fontWeight: FontWeight.w400),
                 ),

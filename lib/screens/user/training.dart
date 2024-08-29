@@ -1,9 +1,14 @@
 // ignore_for_file: file_names
 
-import 'package:fitpro/screens/user/advanced.dart';
-import 'package:fitpro/screens/user/beginner.dart';
-import 'package:fitpro/screens/user/intermediate.dart';
+import 'package:fitpro/screens/user/advanced/advanced.dart';
+import 'package:fitpro/screens/user/beginner/beginner.dart';
+import 'package:fitpro/screens/user/intermediate/intermediate.dart';
+import 'package:fitpro/widget/colors.dart';
+import 'package:fitpro/widget/custom_appbar.dart';
+import 'package:fitpro/widget/endDrawer.dart';
+import 'package:fitpro/widget/customWorkoutContainer.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class Training extends StatefulWidget {
   const Training({super.key});
@@ -16,165 +21,49 @@ class _TrainingState extends State<Training> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 25, 28, 26),
-      appBar: AppBar(
-        backgroundColor: Colors.black,
-        iconTheme: const IconThemeData(color: Colors.white),
-        title: const Text(
-          'TRAINING',
-          style: TextStyle(
-            color: Colors.white, 
-            fontWeight: FontWeight.bold,
-          ),
-        ),
+      backgroundColor: MyColors.Black,
+      appBar: customAppBar(
+        context,
+        text1: 'Training',
+        icons: FontAwesomeIcons.bars,
+        back: true,
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(12.0),
+      endDrawer: const EndDrawer(),
+      body: const Padding(
+        padding: EdgeInsets.all(12.0),
         child: SingleChildScrollView(
           child: Column(
             children: [
-              const SizedBox(
+              SizedBox(
                 height: 20,
               ),
-              Container(
-                height: 230,
-                decoration: BoxDecoration(
-                  color: Colors.black,
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Image.asset(
-                      'images/BEGINNER.jpg',
-                      height: 200,
-                      width: 200,
-                    ),
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        const Text(
-                          'BEGINNER',
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
-                          ),
-                        ),
-                        ElevatedButton(
-                            onPressed: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => const Beginner()));
-                            },
-                            child: const Text(
-                              'START',
-                              style: TextStyle(
-                                  fontSize: 19,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.black),
-                            ))
-                      ],
-                    )
-                  ],
-                ),
+              CustomWorkoutContainer(
+                imagePath: 'images/BEGINNER.jpg',
+                title: 'BEGINNER',
+                textButton: 'START',
+                navigate: Beginner(),
               ),
-              const SizedBox(
+              SizedBox(
                 height: 20,
               ),
-              Container(
-                height: 230,
-                decoration: BoxDecoration(
-                  color: Colors.black,
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(left: 40),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          const Text(
-                            'INTERMEDIATE',
-                            style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
-                            ),
-                          ),
-                          ElevatedButton(
-                              onPressed: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) =>
-                                            const Intermediate()));
-                              },
-                              child: const Text(
-                                'START',
-                                style: TextStyle(
-                                    fontSize: 19,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.black),
-                              ))
-                        ],
-                      ),
-                    ),
-                    Image.asset('images/INTERMEDIATE.jpeg',
-                        height: 290, width: 200),
-                  ],
-                ),
+              CustomWorkoutContainer(
+                imagePath: 'images/INTERMEDIATE.jpeg',
+                title: 'INTERMEDIATE',
+                textButton: 'START',
+                navigate: Intermediate(),
+                imageRight: true,
               ),
-              const SizedBox(
+              SizedBox(
                 height: 20,
               ),
-              Container(
-                height: 230,
-                decoration: BoxDecoration(
-                  color: Colors.black,
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Image.asset(
-                      'images/ADVANCED.png',
-                      height: 200,
-                      width: 200,
-                    ),
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        const Text(
-                          'ADVANCED',
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
-                          ),
-                        ),
-                        ElevatedButton(
-                            onPressed: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => const Advanced()));
-                            },
-                            child: const Text(
-                              'START',
-                              style: TextStyle(
-                                  fontSize: 19,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.black),
-                            ))
-                      ],
-                    )
-                  ],
-                ),
+              CustomWorkoutContainer(
+                imagePath:  'images/ADVANCED.png',
+                title: 'ADVANCED',
+                textButton: 'START',
+                navigate: Advanced(),
+
               ),
+              
             ],
           ),
         ),

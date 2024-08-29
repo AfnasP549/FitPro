@@ -21,6 +21,7 @@ class BeginnerWorkoutModelAdapter extends TypeAdapter<BeginnerWorkoutModel> {
       name: fields[2] as String,
       description: fields[3] as String,
       duration: fields[4] as String,
+      isFavorite: fields[5] as bool,
       id: fields[0] as int?,
     );
   }
@@ -28,7 +29,7 @@ class BeginnerWorkoutModelAdapter extends TypeAdapter<BeginnerWorkoutModel> {
   @override
   void write(BinaryWriter writer, BeginnerWorkoutModel obj) {
     writer
-      ..writeByte(5)
+      ..writeByte(6)
       ..writeByte(0)
       ..write(obj.id)
       ..writeByte(1)
@@ -38,7 +39,9 @@ class BeginnerWorkoutModelAdapter extends TypeAdapter<BeginnerWorkoutModel> {
       ..writeByte(3)
       ..write(obj.description)
       ..writeByte(4)
-      ..write(obj.duration);
+      ..write(obj.duration)
+      ..writeByte(5)
+      ..write(obj.isFavorite);
   }
 
   @override
