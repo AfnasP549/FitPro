@@ -17,19 +17,22 @@ class DietTrackerModelAdapter extends TypeAdapter<DietTrackerModel> {
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
     return DietTrackerModel(
-      imagePath: fields[0] as String,
-      note: fields[1] as String,
+      category: fields[0] as String,
+      image: fields[1] as String,
+      description: fields[2] as String,
     );
   }
 
   @override
   void write(BinaryWriter writer, DietTrackerModel obj) {
     writer
-      ..writeByte(2)
+      ..writeByte(3)
       ..writeByte(0)
-      ..write(obj.imagePath)
+      ..write(obj.category)
       ..writeByte(1)
-      ..write(obj.note);
+      ..write(obj.image)
+      ..writeByte(2)
+      ..write(obj.description);
   }
 
   @override

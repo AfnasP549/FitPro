@@ -80,6 +80,10 @@ class _DietPageState extends State<DietScreen> {
   double _totalCalories = 0;
 
   void _logMeal() {
+     final FocusScopeNode currentScope = FocusScope.of(context);
+        if (!currentScope.hasPrimaryFocus && currentScope.hasFocus) {
+          FocusManager.instance.primaryFocus?.unfocus();
+        }
     if (_formKey.currentState!.validate() && _selectedFood != null) {
       final quantity = double.tryParse(_quantityController.text) ?? 0;
       setState(() {

@@ -64,7 +64,7 @@ class _HomeState extends State<Home> {
                                         MaterialPageRoute(
                                             builder: (ctx) =>
                                                const Training()));
-                                              //const Dummy()));
+                                              
                                               
 
                                   },

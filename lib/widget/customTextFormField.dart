@@ -11,6 +11,8 @@ class CustomTextFormField extends StatelessWidget {
   final TextInputType keyboardTYpe;
   final bool obscureText;
   final TextStyle?style;
+  final bool maxLines;
+
  
 
    const CustomTextFormField({
@@ -22,23 +24,30 @@ class CustomTextFormField extends StatelessWidget {
     this.keyboardTYpe = TextInputType.text,
     this.obscureText =false,
     this.style,
+     this.maxLines= false,
 
     });
 
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-      controller: controller,
-      style: style?? const TextStyle(color: MyColors.White),
-      decoration: InputDecoration(
-        labelText: labelText,labelStyle:const TextStyle(color: MyColors.White),
-        hintText: hintText,
-        border:  OutlineInputBorder(borderRadius:BorderRadius.circular(10) ),
-        contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-       ) ,
-       validator: validator,
-       keyboardType: keyboardTYpe,
-       obscureText: obscureText,
+    return GestureDetector(
+      onTap: () {
+        Focus.of(context).unfocus();
+      },
+      child: TextFormField(
+        maxLines: 5,
+        controller: controller,
+        style: style?? const TextStyle(color: MyColors.White),
+        decoration: InputDecoration(
+          labelText: labelText,labelStyle:const TextStyle(color: MyColors.White),
+          hintText: hintText,
+          border:  OutlineInputBorder(borderRadius:BorderRadius.circular(10) ),
+          contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+         ) ,
+         validator: validator,
+         keyboardType: keyboardTYpe,
+         obscureText: obscureText,
+      ),
     );
   }
 }

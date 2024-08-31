@@ -107,6 +107,7 @@ class _IntermediateEditState extends State<IntermediateEdit> {
                     height: 20,
                   ),
                   CustomTextFormField(
+                    maxLines: true,
                     labelText: 'Description',
                     controller: _descriptionController,
                     validator: (value) {

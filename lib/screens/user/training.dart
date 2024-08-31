@@ -29,38 +29,37 @@ class _TrainingState extends State<Training> {
         back: true,
       ),
       endDrawer: const EndDrawer(),
-      body: const Padding(
-        padding: EdgeInsets.all(12.0),
+      body:  Padding(
+        padding: const EdgeInsets.all(12.0),
         child: SingleChildScrollView(
           child: Column(
             children: [
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               CustomWorkoutContainer(
-                imagePath: 'images/BEGINNER.jpg',
-                title: 'BEGINNER',
+                imagePath: 'images/BEGINNER1.png',
                 textButton: 'START',
-                navigate: Beginner(),
+                navigate: const Beginner(),
+                buttonRight: true,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               CustomWorkoutContainer(
-                imagePath: 'images/INTERMEDIATE.jpeg',
-                title: 'INTERMEDIATE',
+                imagePath: 'images/INTERMEDIATE2.png',
                 textButton: 'START',
-                navigate: Intermediate(),
-                imageRight: true,
+                navigate: const Intermediate(),
+                buttonRight: false,
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               CustomWorkoutContainer(
-                imagePath:  'images/ADVANCED.png',
-                title: 'ADVANCED',
+                imagePath:  'images/ADVANCED3.png',
                 textButton: 'START',
-                navigate: Advanced(),
+                navigate: const Advanced(),
+                buttonRight: true,
 
               ),
               

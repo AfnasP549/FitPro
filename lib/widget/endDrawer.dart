@@ -1,6 +1,7 @@
 // ignore_for_file: file_names
 
 import 'package:fitpro/screens/admin/admin_login.dart';
+import 'package:fitpro/screens/user/about.dart';
 import 'package:fitpro/screens/user/profile.dart';
 import 'package:fitpro/widget/colors.dart';
 import 'package:flutter/material.dart';
@@ -141,6 +142,7 @@ class EndDrawer extends StatelessWidget {
                     ),
                     onTap: () {
                       Navigator.pop(context);
+                      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (ctx)=>AboutPage()));
                     },
                   ),
                 ],

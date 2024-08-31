@@ -109,7 +109,17 @@ class _HistoryState extends State<History> {
   }
 
   int calculateTime(List<WorkoutHistoryModel> list) {
-    return list.fold(0, (previousValue, element) => previousValue + element.duration);
+    int total = 0;
+    final now = DateTime.now();
+    final today = DateTime(now.year, now.month, now.day);
+    for (var element in list) {
+      var date =
+          DateTime(element.date.year, element.date.month, element.date.day);
+      if (date == today) {
+        total += element.duration;
+      }
+    }
+    return total;
   }
 
   String dateString(DateTime date) {
@@ -127,9 +137,10 @@ class _HistoryState extends State<History> {
   }
 
   void convertToMap(List<WorkoutHistoryModel> list) {
-    map.clear();  
+    map.clear();
     for (var element in list) {
-      var date = DateTime(element.date.year, element.date.month, element.date.day);
+      var date =
+          DateTime(element.date.year, element.date.month, element.date.day);
       if (!map.containsKey(date)) {
         map[date] = [];
       }
@@ -153,7 +164,7 @@ class _HistoryState extends State<History> {
       ));
     }
 
-
-    map = Map.fromEntries(map.entries.toList()..sort((a, b) => b.key.compareTo(a.key)));
+    map = Map.fromEntries(
+        map.entries.toList()..sort((a, b) => b.key.compareTo(a.key)));
   }
 }

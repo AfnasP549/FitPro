@@ -3,6 +3,8 @@
 import 'package:fitpro/widget/bottom_navigationBar.dart';
 import 'package:flutter/material.dart';
 
+import '../../db_functions/diet_tracker_db.dart';
+
 class Splashscreen extends StatefulWidget {
   const Splashscreen({super.key});
 
@@ -18,6 +20,7 @@ class _SplashscreenState extends State<Splashscreen> {
   }
 
   _navigateToHome() async {
+    await getDietTracker();
     await Future.delayed(const Duration(seconds: 3));
     Navigator.pushReplacement(
         context, MaterialPageRoute(builder: (context) => const Bottomnavigationbar()));
