@@ -29,7 +29,7 @@ class _IntermediateState extends State<Intermediate> {
 
   setState(() {
     interMediateWorkoutList.value[index] = workout;
-    interMediateWorkoutList.notifyListeners(); // Notify listeners to update the UI
+    interMediateWorkoutList.notifyListeners(); 
   });
 
   final snackBarText = workout.isFavorite

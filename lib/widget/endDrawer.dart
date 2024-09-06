@@ -2,7 +2,9 @@
 
 import 'package:fitpro/screens/admin/admin_login.dart';
 import 'package:fitpro/screens/user/about.dart';
+import 'package:fitpro/screens/user/privacy_policy.dart';
 import 'package:fitpro/screens/user/profile.dart';
+import 'package:fitpro/screens/user/termsandconditon.dart';
 import 'package:fitpro/widget/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -103,19 +105,6 @@ class EndDrawer extends StatelessWidget {
                   ),
                   ListTile(
                     leading: const Icon(
-                      FontAwesomeIcons.share,
-                      color: MyColors.White,
-                    ),
-                    title: const Text(
-                      'Share with Friends',
-                      style: TextStyle(color: MyColors.White),
-                    ),
-                    onTap: () {
-                      Navigator.pop(context);
-                    },
-                  ),
-                  ListTile(
-                    leading: const Icon(
                       FontAwesomeIcons.eye,
                       color: MyColors.White,
                     ),
@@ -127,6 +116,11 @@ class EndDrawer extends StatelessWidget {
                     ),
                     onTap: () {
                       Navigator.pop(context);
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (ctx) => const PrivacyPolicyScreen(),
+                        ),
+                      );
                     },
                   ),
                   ListTile(
@@ -142,9 +136,44 @@ class EndDrawer extends StatelessWidget {
                     ),
                     onTap: () {
                       Navigator.pop(context);
-                      Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (ctx)=>AboutPage()));
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (ctx) => const AboutPage(),
+                        ),
+                      );
                     },
                   ),
+                  ListTile(
+                    leading: const Icon(
+                      FontAwesomeIcons.fileContract,
+                      color: MyColors.White,
+                    ),
+                    title: const Text(
+                      'Terms and Condition',
+                      style: TextStyle(
+                        color: MyColors.White,
+                      ),
+                    ),
+                    onTap: () {
+                      Navigator.pop(context);
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (ctx) => const TermsAndCondition(),
+                        ),
+                      );
+                    },
+                  ),
+                  const SizedBox(
+                    height: 290,
+                  ),
+                  const Center(
+                      child: Text(
+                    'version: 1.0.0+1',
+                    style: TextStyle(
+                      color: MyColors.WGrey,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  )),
                 ],
               ),
             ),

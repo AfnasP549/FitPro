@@ -12,18 +12,22 @@ class DietTracker extends StatelessWidget {
     return Scaffold(
       backgroundColor: MyColors.Black,
       appBar: customAppBar(context, text1: 'Diet Tracker', back: true),
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: ListView.builder(
-          shrinkWrap: true,
-          //physics: NeverScrollableScrollPhysics(),
-            itemCount: customDietGridViewList.length,
-            itemBuilder: (context, index) {
-            return CustomDietContainer(
-              imgPath: customDietGridViewList[index].imgPath,  
-              catergory: customDietGridViewList[index].category,
-            );
-          }),
+      body: Column(
+        children: [
+          const SizedBox(height: 60,),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: ListView.builder(
+              shrinkWrap: true,
+                itemCount: customDietGridViewList.length,
+                itemBuilder: (context, index) {
+                return CustomDietContainer(
+                  imgPath: customDietGridViewList[index].imgPath,  
+                  catergory: customDietGridViewList[index].category,
+                );
+              }),
+          ),
+        ],
       ),
     );
   }

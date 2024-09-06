@@ -20,25 +20,16 @@ class CustomDietContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        DietTrackerModel? dietmodel = getDietTracker('underWeight');
+        DietTrackerModel? dietmodel = getDietTracker(catergory);
         Navigator.of(context).push(MaterialPageRoute(
             builder: (ctx) => DietTrackerAdd(
                 category: catergory, dietTrackerModel: dietmodel)));
       },
       child: Container(
-        height: 250,
+        height: 60,
         decoration: BoxDecoration(
-          color: MyColors.DBlack,
-          borderRadius: BorderRadius.circular(16),
           image: DecorationImage(image: AssetImage(imgPath)),
           
-        ),
-        child: const Center(
-          child: Text('weight',
-          style: TextStyle(
-            color: MyColors.Amber,
-            fontWeight: FontWeight.bold,
-          ),),
         ),
       ),
     );
@@ -46,10 +37,10 @@ class CustomDietContainer extends StatelessWidget {
 }
 
 List<CustomAdminDiet> customDietGridViewList = [
-  CustomAdminDiet(imgPath: '', category: 'underWeight'),
-  CustomAdminDiet(imgPath: '', category: 'normalWeight'),
-  CustomAdminDiet(imgPath: '', category: 'overWeight'),
-  CustomAdminDiet(imgPath: '', category: 'obesity'),
+  CustomAdminDiet(imgPath: 'images/underWeight.png', category: 'underWeight'),
+  CustomAdminDiet(imgPath: 'images/normalWeight.png', category: 'normalWeight'),
+  CustomAdminDiet(imgPath: 'images/overWeight.png', category: 'overWeight'),
+  CustomAdminDiet(imgPath: 'images/obesity.png', category: 'obesity'),
 ];
 
 class CustomAdminDiet {

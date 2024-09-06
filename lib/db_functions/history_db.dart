@@ -12,7 +12,7 @@ class HistoryDbMethods {
     final historyDb = await Hive.openBox<WorkoutHistoryModel>('history_db');
     log(historyDb.length.toString());
     historyNotifier.value.clear();
-    historyNotifier.value.addAll(historyDb.values.cast<WorkoutHistoryModel>());
+     historyNotifier.value.addAll(historyDb.values.cast<WorkoutHistoryModel>());
     historyNotifier.notifyListeners();
     await historyDb.close();
   }
@@ -24,3 +24,4 @@ class HistoryDbMethods {
   await getAllHistory();
   }
 }
+

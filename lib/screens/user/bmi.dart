@@ -15,7 +15,6 @@ class Bmi extends StatefulWidget {
   const Bmi({super.key});
 
   @override
-  // ignore: library_private_types_in_public_api
   _BMICalculatorPageState createState() => _BMICalculatorPageState();
 }
 
@@ -28,10 +27,10 @@ class _BMICalculatorPageState extends State<Bmi> {
   String _bmiCategory = '';
 
   void _calculateBMI() {
-     final FocusScopeNode currentScope = FocusScope.of(context);
-        if (!currentScope.hasPrimaryFocus && currentScope.hasFocus) {
-          FocusManager.instance.primaryFocus?.unfocus();
-        }
+    final FocusScopeNode currentScope = FocusScope.of(context);
+    if (!currentScope.hasPrimaryFocus && currentScope.hasFocus) {
+      FocusManager.instance.primaryFocus?.unfocus();
+    }
     if (_formKey.currentState!.validate()) {
       double height = double.tryParse(_heightController.text) ?? 0;
       double weight = double.tryParse(_weightController.text) ?? 0;
@@ -53,13 +52,13 @@ class _BMICalculatorPageState extends State<Bmi> {
       dietObj = dietTrackDB('underWeight');
       return 'UNDER WEIGHT';
     } else if (bmi < 24.9) {
-      dietTrackDB('normalWeight');
+      dietObj = dietTrackDB('normalWeight');
       return 'NORMAL WEIGHT';
     } else if (bmi < 29.9) {
-      dietTrackDB('overWeight');
+      dietObj = dietTrackDB('overWeight');
       return 'OVER WEIGHT';
     } else {
-      dietTrackDB('obesity');
+      dietObj = dietTrackDB('obesity');
       return 'OBESITY';
     }
   }
@@ -252,24 +251,56 @@ class _BMICalculatorPageState extends State<Bmi> {
                       ),
                       child: Column(
                         children: [
-                          const Text(
-                            'DIET TRACK',
-                            style: TextStyle(
-                              color: MyColors.White,
-                              fontWeight: FontWeight.bold,
+                          const Padding(
+                            padding: EdgeInsets.all(8.0),
+                            child: Text(
+                              'DIET TRACK',
+                              style: TextStyle(
+                                color: MyColors.White,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 25,
+                              ),
                             ),
                           ),
-                            Text(
-                            dietObj!.description,
-                            style: const TextStyle(
-                              color: MyColors.White,
-                              fontWeight: FontWeight.bold,
+                          Padding(
+                            padding: const EdgeInsets.all(10.0),
+                            child: Text(
+                              dietObj!.description,
+                              style: const TextStyle(
+                                color: MyColors.White,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
                           ),
                           const SizedBox(
                             height: 20,
                           ),
-                          Image.file(File(dietObj!.image))
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => FullScreenImage(
+                                    imagePath: dietObj!.image,
+                                  ),
+                                ),
+                              );
+                            },
+                            child: Container(
+                              width: double.infinity,
+                              decoration: const BoxDecoration(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(10)),
+                              ),
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(10),
+                                child: Image.file(
+                                  File(dietObj!.image),
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                            ),
+                          ),
                         ],
                       ),
                     ),
@@ -284,6 +315,7 @@ class _BMICalculatorPageState extends State<Bmi> {
 
 DietTrackerModel dietTrackDB(String cate) {
   log(dietTrackerList.value.length.toString());
+  log(cate);
   try {
     final diet = dietTrackerList.value.firstWhere(
       (element) => element.category == cate,
@@ -292,5 +324,25 @@ DietTrackerModel dietTrackDB(String cate) {
   } on Exception catch (e) {
     log(e.toString());
     rethrow;
+  }
+}
+
+class FullScreenImage extends StatelessWidget {
+  final String imagePath;
+
+  const FullScreenImage({super.key, required this.imagePath});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: MyColors.DBlack,
+      appBar: AppBar(
+        backgroundColor:MyColors.DBlack,
+        iconTheme: const IconThemeData(color: Colors.white),     
+      ),
+      body: Center(
+        child: Image.file(File(imagePath)),
+      ),
+    );
   }
 }

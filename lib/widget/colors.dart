@@ -13,6 +13,7 @@ class MyColors{
   static const Color Blue = Colors.blue;
   static const Color Amber = Colors.amber;
   static const Color Orange = Color.fromARGB(255, 145, 102, 18);
+  static const Color WGrey = Color.fromARGB(255, 154, 154, 154);
   static const Color Yellow = Colors.yellow;
   static const Color LOrange = Colors.orange;
   static const Color DRed = Colors.red;

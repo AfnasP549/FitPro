@@ -1,8 +1,8 @@
 import 'package:hive/hive.dart';
 
-part 'history_model.g.dart'; // Ensure this part directive matches your generated file
+part 'history_model.g.dart'; 
 
-@HiveType(typeId: 4) // Ensure this typeId is unique
+@HiveType(typeId: 4) 
 class WorkoutHistoryModel extends HiveObject {
   @HiveField(0)
   String workoutName;

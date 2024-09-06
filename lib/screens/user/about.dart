@@ -9,7 +9,7 @@ class AboutPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: MyColors.Black,
-      appBar: customAppBar(context, text1: 'About FitPro', back: true),
+      appBar: customAppBar(context, text1: 'About', back: true),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(16.0),
@@ -59,20 +59,6 @@ class AboutPage extends StatelessWidget {
               const SizedBox(height: 8),
               const Text(
                 'At FitPro, we believe that fitness is more than just exercise—it\'s about building a lifestyle that promotes health, well-being, and confidence. Our mission is to provide you with the tools and support you need to make informed decisions about your fitness journey, helping you to achieve your goals and maintain a healthy lifestyle.',
-                style: TextStyle(fontSize: 16, color: MyColors.White),
-              ),
-              const SizedBox(height: 16),
-              const Text(
-                'Privacy Policy:',
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                  color: MyColors.White,
-                ),
-              ),
-              const SizedBox(height: 8),
-              const Text(
-                'Your privacy is important to us. FitPro is committed to protecting your personal information and ensuring that your experience is safe and secure. We do not share your personal information with third parties without your consent, and all data collected is used solely for enhancing your experience with the app. You have control over your data and can choose to delete it at any time. For more details, please review our full Privacy Policy in the app settings.',
                 style: TextStyle(fontSize: 16, color: MyColors.White),
               ),
               const SizedBox(height: 16),

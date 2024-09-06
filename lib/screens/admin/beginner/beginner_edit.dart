@@ -4,6 +4,7 @@ import 'package:fitpro/screens/admin/adminhome.dart';
 import 'package:fitpro/widget/colors.dart';
 import 'package:fitpro/widget/customTextFormField.dart';
 import 'package:fitpro/widget/custom_appbar.dart';
+import 'package:fitpro/widget/validation.dart';
 import 'package:flutter/material.dart';
 
 class BeginnerEdit extends StatefulWidget {
@@ -63,17 +64,7 @@ class _AdminBeginnerEditState extends State<BeginnerEdit> {
                     labelText: 'Url',
                     controller: _urlController,
                     validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return 'Please enter url';
-                      }
-                      const urlPattern =
-                          r'^(http|https):\/\/[\w\-_]+(\.[\w\-_]+)+[/#?]?.*$';
-                      final result = RegExp(urlPattern, caseSensitive: false)
-                          .hasMatch(value);
-                      if (!result) {
-                        return 'Please enter a valid URL';
-                      }
-                      return null;
+                      return validatorFunction(url: value);
                     },
                   ),
                   const SizedBox(
@@ -83,23 +74,18 @@ class _AdminBeginnerEditState extends State<BeginnerEdit> {
                     labelText: 'Name',
                     controller: _nameController,
                     validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return 'Name Needed';
-                      }
-                      return null;
+                      return validatorFunction(name: value);
                     },
                   ),
                   const SizedBox(
                     height: 20,
                   ),
                   CustomTextFormField(
+                    maxLines: 3,
                     labelText: 'Description',
                     controller: _descriptionController,
                     validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return 'Description Needed';
-                      }
-                      return null;
+                      return validatorFunction(description: value);
                     },
                   ),
                   const SizedBox(
@@ -110,10 +96,7 @@ class _AdminBeginnerEditState extends State<BeginnerEdit> {
                     controller: _durationController,
                     keyboardTYpe: TextInputType.number,
                     validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return 'Duration Needed';
-                      }
-                      return null;
+                      return validatorFunction(duration: value);
                     },
                   ),
                   const SizedBox(
@@ -123,14 +106,17 @@ class _AdminBeginnerEditState extends State<BeginnerEdit> {
                     onPressed: () {
                       if (_formKey.currentState?.validate() ?? false) {
                         final workout = BeginnerWorkoutModel(
-                            url: _urlController.text,
-                            name: _nameController.text,
-                            description: _descriptionController.text,
-                            duration: _durationController.text);
+                          url: _urlController.text,
+                          name: _nameController.text,
+                          description: _descriptionController.text,
+                          duration: _durationController.text,
+                        );
                         beginnerEditWorkout(workout, widget.index);
+
+                        showSnackBar(context, 'Workout edited successfully!');
+
                         Navigator.pop(context);
                       }
-                      showSnackBar(context, 'Workout edited successfully!');
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: MyColors.White,

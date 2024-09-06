@@ -39,10 +39,9 @@ class _HomeState extends State<Home> {
                   decoration: BoxDecoration(
                     image: const DecorationImage(
                       image: AssetImage('images/HOME1.png'),
-                      fit: BoxFit
-                          .cover, 
+                      fit: BoxFit.cover,
                     ),
-                    borderRadius: BorderRadius.circular(20), 
+                    borderRadius: BorderRadius.circular(20),
                   ),
                   child: Stack(
                     children: [
@@ -55,29 +54,25 @@ class _HomeState extends State<Home> {
                                 width: 68,
                               ),
                               SizedBox(
-                                width: 245, 
-                                height: 40, 
+                                width: 245,
+                                height: 40,
                                 child: ElevatedButton(
                                   onPressed: () {
                                     Navigator.push(
                                         context,
                                         MaterialPageRoute(
                                             builder: (ctx) =>
-                                               const Training()));
-                                              
-                                              
-
+                                                const Training()));
                                   },
                                   style: ElevatedButton.styleFrom(
                                     shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(
-                                          20),
+                                      borderRadius: BorderRadius.circular(20),
                                     ),
                                   ),
                                   child: const Text(
                                     'START',
                                     style: TextStyle(
-                                      fontSize: 18, 
+                                      fontSize: 18,
                                       fontWeight: FontWeight.bold,
                                       color: Colors.black,
                                     ),
@@ -97,11 +92,9 @@ class _HomeState extends State<Home> {
               )
             ],
           ),
-
           const SizedBox(
             height: 80,
           ),
-
           const Column(
             children: [
               Padding(

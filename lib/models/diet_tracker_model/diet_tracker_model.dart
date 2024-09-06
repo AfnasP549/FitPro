@@ -1,4 +1,3 @@
-import 'dart:typed_data';
 
 import 'package:hive_flutter/adapters.dart';
 part 'diet_tracker_model.g.dart';

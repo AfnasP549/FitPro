@@ -4,6 +4,7 @@ import 'package:fitpro/screens/admin/adminhome.dart';
 import 'package:fitpro/widget/colors.dart';
 import 'package:fitpro/widget/customTextFormField.dart';
 import 'package:fitpro/widget/custom_appbar.dart';
+import 'package:fitpro/widget/validation.dart';
 import 'package:flutter/material.dart';
 
 class AdvancedEdit extends StatefulWidget {
@@ -63,10 +64,7 @@ class _AdminAdvancedEditState extends State<AdvancedEdit> {
                     labelText: 'Url',
                     controller: _urlController,
                     validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return 'Please enter your url';
-                      }
-                      return null;
+                      return validatorFunction(url: value);
                     },
                   ),
                   const SizedBox(
@@ -76,23 +74,18 @@ class _AdminAdvancedEditState extends State<AdvancedEdit> {
                     labelText: 'Name',
                     controller: _nameController,
                     validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return 'Please enter your name';
-                      }
-                      return null;
+                      return validatorFunction(name: value);
                     },
                   ),
                   const SizedBox(
                     height: 20,
                   ),
                   CustomTextFormField(
+                    maxLines: 3,
                     labelText: 'Description',
                     controller: _descriptionController,
                     validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return 'Please enter your Description';
-                      }
-                      return null;
+                      return validatorFunction(description: value);
                     },
                   ),
                   const SizedBox(
@@ -103,10 +96,7 @@ class _AdminAdvancedEditState extends State<AdvancedEdit> {
                     controller: _durationController,
                     keyboardTYpe: TextInputType.number,
                     validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return 'Please enter your Duration';
-                      }
-                      return null;
+                      return validatorFunction(duration: value);
                     },
                   ),
                   const SizedBox(
@@ -119,19 +109,24 @@ class _AdminAdvancedEditState extends State<AdvancedEdit> {
                     onPressed: () {
                       if (_formKey.currentState?.validate() ?? false) {
                         final workout = AdvancedWorkoutModel(
-                            url: _urlController.text,
-                            name: _nameController.text,
-                            description: _descriptionController.text,
-                            duration: _durationController.text);
+                          url: _urlController.text,
+                          name: _nameController.text,
+                          description: _descriptionController.text,
+                          duration: _durationController.text,
+                        );
                         advancedEditWorkout(workout, widget.index);
+
+                        showSnackBar(context, 'Workout edited successfully!');
+
                         Navigator.pop(context);
                       }
-                      showSnackBar(context, 'Workout edited successfully!');
                     },
                     child: const Text(
                       'UPDATE',
                       style: TextStyle(
-                          color: MyColors.DBlack, fontWeight: FontWeight.bold),
+                        color: MyColors.DBlack,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   )
                 ],

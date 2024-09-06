@@ -76,7 +76,6 @@ class _TrainingState extends State<Adminhome> {
           itemBuilder: (BuildContext context, int index) {
             return CustomAdminContainer(
               imagePath: adminGridViewList[index].imagePath,
-              //title: adminGridViewList[index].title,
               navigate: adminGridViewList[index].navigate,
             );
           },

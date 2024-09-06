@@ -11,7 +11,7 @@ class CustomTextFormField extends StatelessWidget {
   final TextInputType keyboardTYpe;
   final bool obscureText;
   final TextStyle?style;
-  final bool maxLines;
+  final int?maxLines;
 
  
 
@@ -24,7 +24,7 @@ class CustomTextFormField extends StatelessWidget {
     this.keyboardTYpe = TextInputType.text,
     this.obscureText =false,
     this.style,
-     this.maxLines= false,
+     this.maxLines,
 
     });
 
@@ -35,7 +35,7 @@ class CustomTextFormField extends StatelessWidget {
         Focus.of(context).unfocus();
       },
       child: TextFormField(
-        maxLines: 5,
+        maxLines: maxLines,
         controller: controller,
         style: style?? const TextStyle(color: MyColors.White),
         decoration: InputDecoration(

@@ -4,6 +4,7 @@
 
 import 'package:fitpro/db_functions/diet_tracker_db.dart';
 import 'package:fitpro/models/diet_tracker_model/diet_tracker_model.dart';
+import 'package:fitpro/screens/admin/adminhome.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:io';
@@ -40,11 +41,7 @@ class _DietTrackerAddState extends State<DietTrackerAdd> {
 
   Future<void> _addDietToDB() async {
     if (img == null || _descriptionController.text.isEmpty) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(
-          content: Text('Please select an image and enter a description'),
-        ),
-      );
+      showSnackBar(context, 'Please select an image and enter a description');
       return;
     }
 
@@ -156,7 +153,11 @@ class _DietTrackerAddState extends State<DietTrackerAdd> {
               Center(
                 child: ElevatedButton(
                   onPressed: _addDietToDB,
-                  child: const Text('Add Diet'),
+                  child: const Text('ADD DIET',
+                  style: TextStyle(
+                    color: MyColors.DBlack,
+                    fontWeight: FontWeight.bold
+                  ),),
                 ),
               ),
             ],

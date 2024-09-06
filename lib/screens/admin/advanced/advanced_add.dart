@@ -4,6 +4,7 @@ import 'package:fitpro/screens/admin/adminhome.dart';
 import 'package:fitpro/widget/colors.dart';
 import 'package:fitpro/widget/customTextFormField.dart';
 import 'package:fitpro/widget/custom_appbar.dart';
+import 'package:fitpro/widget/validation.dart';
 import 'package:flutter/material.dart';
 
 class AdvancedAdd extends StatelessWidget {
@@ -39,10 +40,7 @@ class AdvancedAdd extends StatelessWidget {
                         labelText: 'Url',
                         controller: _urlController,
                         validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return 'Url Needed';
-                          }
-                          return null;
+                          return validatorFunction(url: value);
                         },
                       ),
                       const SizedBox(
@@ -52,23 +50,18 @@ class AdvancedAdd extends StatelessWidget {
                         labelText: 'Name',
                         controller: _nameController,
                         validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return 'Name Needed';
-                          }
-                          return null;
+                          return validatorFunction(name: value);
                         },
                       ),
                       const SizedBox(
                         height: 20,
                       ),
                       CustomTextFormField(
+                        maxLines: 3,
                         labelText: 'Description',
                         controller: _descriptionController,
                         validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return 'Description Needed';
-                          }
-                          return null;
+                          return validatorFunction(description: value);
                         },
                       ),
                       const SizedBox(
@@ -79,10 +72,7 @@ class AdvancedAdd extends StatelessWidget {
                         controller: _durationController,
                         keyboardTYpe: TextInputType.number,
                         validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return 'Duration Needed';
-                          }
-                          return null;
+                          return validatorFunction(duration: value);
                         },
                       ),
                       const SizedBox(

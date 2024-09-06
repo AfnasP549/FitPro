@@ -2,7 +2,11 @@
 import 'package:fitpro/widget/colors.dart';
 import 'package:flutter/material.dart';
 
-customAppBar(BuildContext context,{required String text1,IconData? icons, bool back=false, }){
+customAppBar(BuildContext context,{
+  required String text1,
+  IconData? icons, 
+  bool back=true,
+   }){
   return AppBar(
         automaticallyImplyLeading: back,
         iconTheme: const IconThemeData(color: MyColors.White),
