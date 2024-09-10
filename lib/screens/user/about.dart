@@ -17,7 +17,7 @@ class AboutPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Text(
-                'About fitproo',
+                'About Fitpro',
                 style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
