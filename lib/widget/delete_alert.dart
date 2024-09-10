@@ -1,6 +1,6 @@
-import 'package:fitpro/db_functions/database_db.dart';
-import 'package:fitpro/screens/admin/adminhome.dart';
-import 'package:fitpro/widget/colors.dart';
+import 'package:fitproo/db_functions/database_db.dart';
+import 'package:fitproo/screens/admin/adminhome.dart';
+import 'package:fitproo/widget/colors.dart';
 import 'package:flutter/material.dart';
 
 void showDeleteDialog(int index, BuildContext context) {

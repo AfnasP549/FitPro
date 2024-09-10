@@ -1,4 +1,4 @@
-name: fitpro
+name: fitproo
 description: "A new Flutter project."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -54,6 +54,11 @@ flutter_icons:
   android: true
   ios: true
   image_path: "images/splashscreen.png"
+  web:
+    generate: true
+    image_path: "images/splashscreen.png"
+    background_color: "#000000"
+    theme_color: "#000000"
 
 
 # For information on the generic Dart part of this file, see the

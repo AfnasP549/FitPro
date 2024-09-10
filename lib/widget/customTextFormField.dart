@@ -1,6 +1,6 @@
 // ignore_for_file: file_names
 
-import 'package:fitpro/widget/colors.dart';
+import 'package:fitproo/widget/colors.dart';
 import 'package:flutter/material.dart';
 
 class CustomTextFormField extends StatelessWidget {

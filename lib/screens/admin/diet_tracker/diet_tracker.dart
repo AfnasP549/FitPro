@@ -1,7 +1,7 @@
 
-import 'package:fitpro/widget/colors.dart';
-import 'package:fitpro/widget/customDietContainer.dart';
-import 'package:fitpro/widget/custom_appbar.dart';
+import 'package:fitproo/widget/colors.dart';
+import 'package:fitproo/widget/customDietContainer.dart';
+import 'package:fitproo/widget/custom_appbar.dart';
 import 'package:flutter/material.dart';
 
 class DietTracker extends StatelessWidget {

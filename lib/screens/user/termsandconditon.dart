@@ -1,5 +1,5 @@
-import 'package:fitpro/widget/colors.dart';
-import 'package:fitpro/widget/custom_appbar.dart';
+import 'package:fitproo/widget/colors.dart';
+import 'package:fitproo/widget/custom_appbar.dart';
 import 'package:flutter/material.dart';
 
 class TermsAndCondition extends StatelessWidget {
@@ -26,7 +26,7 @@ class TermsAndCondition extends StatelessWidget {
               ),
               SizedBox(height: 16),
               Text(
-                'Welcome to FitPro! By using our app, you agree to the following terms and conditions. Please read them carefully.',
+                'Welcome to fitproo! By using our app, you agree to the following terms and conditions. Please read them carefully.',
                 style: TextStyle(fontSize: 16, color: Colors.white),
               ),
               SizedBox(height: 16),
@@ -40,7 +40,7 @@ class TermsAndCondition extends StatelessWidget {
               ),
               SizedBox(height: 8),
               Text(
-                'By accessing or using FitPro, you agree to be bound by these terms and conditions. If you do not agree with any part of these terms, you must not use our app.',
+                'By accessing or using fitproo, you agree to be bound by these terms and conditions. If you do not agree with any part of these terms, you must not use our app.',
                 style: TextStyle(fontSize: 16, color: Colors.white),
               ),
               SizedBox(height: 16),
@@ -68,7 +68,7 @@ class TermsAndCondition extends StatelessWidget {
               ),
               SizedBox(height: 8),
               Text(
-                'FitPro reserves the right to modify or discontinue, temporarily or permanently, the app or any service to which it connects, with or without notice and without liability to you.',
+                'fitproo reserves the right to modify or discontinue, temporarily or permanently, the app or any service to which it connects, with or without notice and without liability to you.',
                 style: TextStyle(fontSize: 16, color: Colors.white),
               ),
               SizedBox(height: 16),
@@ -82,7 +82,7 @@ class TermsAndCondition extends StatelessWidget {
               ),
               SizedBox(height: 8),
               Text(
-                'In no event shall FitPro, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses.',
+                'In no event shall fitproo, nor its directors, employees, partners, agents, suppliers, or affiliates, be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses.',
                 style: TextStyle(fontSize: 16, color: Colors.white),
               ),
               SizedBox(height: 16),
@@ -110,7 +110,7 @@ class TermsAndCondition extends StatelessWidget {
               ),
               SizedBox(height: 8),
               Text(
-                'If you have any questions about these Terms, please contact us at support@fitpro.com.',
+                'If you have any questions about these Terms, please contact us at support@fitproo.com.',
                 style: TextStyle(fontSize: 16, color: Colors.white),
               ),
             ],

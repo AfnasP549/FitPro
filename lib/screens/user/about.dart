@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:fitpro/widget/colors.dart';
-import 'package:fitpro/widget/custom_appbar.dart';
+import 'package:fitproo/widget/colors.dart';
+import 'package:fitproo/widget/custom_appbar.dart';
 
 class AboutPage extends StatelessWidget {
   const AboutPage({super.key});
@@ -17,7 +17,7 @@ class AboutPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const Text(
-                'About FitPro',
+                'About fitproo',
                 style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
@@ -26,7 +26,7 @@ class AboutPage extends StatelessWidget {
               ),
               const SizedBox(height: 16),
               const Text(
-                'Welcome to FitPro, your all-in-one fitness companion designed to help you achieve your health and wellness goals. Whether you\'re just starting your fitness journey or you\'re a seasoned athlete, FitPro is here to guide you every step of the way.',
+                'Welcome to fitproo, your all-in-one fitness companion designed to help you achieve your health and wellness goals. Whether you\'re just starting your fitness journey or you\'re a seasoned athlete, fitproo is here to guide you every step of the way.',
                 style: TextStyle(fontSize: 16, color: MyColors.White),
               ),
               const SizedBox(height: 16),
@@ -58,7 +58,7 @@ class AboutPage extends StatelessWidget {
               ),
               const SizedBox(height: 8),
               const Text(
-                'At FitPro, we believe that fitness is more than just exercise—it\'s about building a lifestyle that promotes health, well-being, and confidence. Our mission is to provide you with the tools and support you need to make informed decisions about your fitness journey, helping you to achieve your goals and maintain a healthy lifestyle.',
+                'At fitproo, we believe that fitness is more than just exercise—it\'s about building a lifestyle that promotes health, well-being, and confidence. Our mission is to provide you with the tools and support you need to make informed decisions about your fitness journey, helping you to achieve your goals and maintain a healthy lifestyle.',
                 style: TextStyle(fontSize: 16, color: MyColors.White),
               ),
               const SizedBox(height: 16),
@@ -71,7 +71,7 @@ class AboutPage extends StatelessWidget {
               ),
               const SizedBox(height: 8),
               const Text(
-                'Join thousands of users who have transformed their lives with FitPro. Download the app, set your goals, and start your journey towards a healthier, fitter you!',
+                'Join thousands of users who have transformed their lives with fitproo. Download the app, set your goals, and start your journey towards a healthier, fitter you!',
                 style: TextStyle(fontSize: 16, color: MyColors.White),
               ),
             ],

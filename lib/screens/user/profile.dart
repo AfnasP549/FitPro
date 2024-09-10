@@ -1,8 +1,8 @@
 import 'dart:io';
-import 'package:fitpro/db_functions/database_db.dart';
-import 'package:fitpro/models/profile_model/profile_model.dart';
-import 'package:fitpro/screens/user/profile_edit.dart';
-import 'package:fitpro/widget/colors.dart';
+import 'package:fitproo/db_functions/database_db.dart';
+import 'package:fitproo/models/profile_model/profile_model.dart';
+import 'package:fitproo/screens/user/profile_edit.dart';
+import 'package:fitproo/widget/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 

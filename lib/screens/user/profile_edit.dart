@@ -1,9 +1,9 @@
 import 'dart:io';
-import 'package:fitpro/db_functions/database_db.dart';
-import 'package:fitpro/models/profile_model/profile_model.dart';
-import 'package:fitpro/widget/colors.dart';
-import 'package:fitpro/widget/customTextFormField.dart';
-import 'package:fitpro/widget/custom_appbar.dart';
+import 'package:fitproo/db_functions/database_db.dart';
+import 'package:fitproo/models/profile_model/profile_model.dart';
+import 'package:fitproo/widget/colors.dart';
+import 'package:fitproo/widget/customTextFormField.dart';
+import 'package:fitproo/widget/custom_appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 

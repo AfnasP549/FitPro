@@ -1,7 +1,7 @@
-  import 'package:fitpro/screens/admin/advanced/admin_advanced.dart';
-  import 'package:fitpro/screens/admin/beginner/admin_beginner.dart';
-import 'package:fitpro/screens/admin/diet_tracker/diet_tracker.dart';
-  import 'package:fitpro/screens/admin/intermediate/admin_intermediate.dart';
+  import 'package:fitproo/screens/admin/advanced/admin_advanced.dart';
+  import 'package:fitproo/screens/admin/beginner/admin_beginner.dart';
+import 'package:fitproo/screens/admin/diet_tracker/diet_tracker.dart';
+  import 'package:fitproo/screens/admin/intermediate/admin_intermediate.dart';
   import 'package:flutter/material.dart';
 
   class CustomAdminContainer extends StatelessWidget {

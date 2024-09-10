@@ -1,8 +1,8 @@
 
-import 'package:fitpro/models/advanced_model/advancedWorkout_model.dart';
-import 'package:fitpro/models/intermediate_model/intermediateWorkout_model.dart';
-import 'package:fitpro/models/profile_model/profile_model.dart';
-import 'package:fitpro/models/beginner_model/beginnerWorkout_model.dart';
+import 'package:fitproo/models/advanced_model/advancedWorkout_model.dart';
+import 'package:fitproo/models/intermediate_model/intermediateWorkout_model.dart';
+import 'package:fitproo/models/profile_model/profile_model.dart';
+import 'package:fitproo/models/beginner_model/beginnerWorkout_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:hive_flutter/adapters.dart';

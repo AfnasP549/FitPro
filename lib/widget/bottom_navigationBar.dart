@@ -1,11 +1,11 @@
 // ignore_for_file: file_names
 
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
-import 'package:fitpro/screens/user/bmi.dart';
-import 'package:fitpro/screens/user/diet_screen.dart';
-import 'package:fitpro/screens/user/history.dart';
-import 'package:fitpro/screens/user/home.dart';
-import 'package:fitpro/widget/colors.dart';
+import 'package:fitproo/screens/user/bmi.dart';
+import 'package:fitproo/screens/user/diet_screen.dart';
+import 'package:fitproo/screens/user/history.dart';
+import 'package:fitproo/screens/user/home.dart';
+import 'package:fitproo/widget/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 

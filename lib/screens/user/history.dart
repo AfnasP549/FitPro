@@ -1,9 +1,9 @@
 import 'dart:developer';
 
-import 'package:fitpro/db_functions/history_db.dart';
-import 'package:fitpro/widget/colors.dart';
-import 'package:fitpro/widget/custom_appbar.dart';
-import 'package:fitpro/widget/endDrawer.dart';
+import 'package:fitproo/db_functions/history_db.dart';
+import 'package:fitproo/widget/colors.dart';
+import 'package:fitproo/widget/custom_appbar.dart';
+import 'package:fitproo/widget/endDrawer.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hive/hive.dart';
@@ -86,7 +86,7 @@ class _HistoryState extends State<History> {
                         ...map[e]!,
                       ],
                     );
-                  }).toList(),
+                  }),
                 ],
               ),
             );

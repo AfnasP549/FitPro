@@ -1,12 +1,12 @@
 import 'dart:developer';
 import 'dart:io';
 
-import 'package:fitpro/db_functions/diet_tracker_db.dart';
-import 'package:fitpro/models/diet_tracker_model/diet_tracker_model.dart';
-import 'package:fitpro/widget/colors.dart';
-import 'package:fitpro/widget/customTextFormField.dart';
-import 'package:fitpro/widget/custom_appbar.dart';
-import 'package:fitpro/widget/endDrawer.dart';
+import 'package:fitproo/db_functions/diet_tracker_db.dart';
+import 'package:fitproo/models/diet_tracker_model/diet_tracker_model.dart';
+import 'package:fitproo/widget/colors.dart';
+import 'package:fitproo/widget/customTextFormField.dart';
+import 'package:fitproo/widget/custom_appbar.dart';
+import 'package:fitproo/widget/endDrawer.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';

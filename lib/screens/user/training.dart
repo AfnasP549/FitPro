@@ -1,12 +1,12 @@
 // ignore_for_file: file_names
 
-import 'package:fitpro/screens/user/advanced/advanced.dart';
-import 'package:fitpro/screens/user/beginner/beginner.dart';
-import 'package:fitpro/screens/user/intermediate/intermediate.dart';
-import 'package:fitpro/widget/colors.dart';
-import 'package:fitpro/widget/custom_appbar.dart';
-import 'package:fitpro/widget/endDrawer.dart';
-import 'package:fitpro/widget/customWorkoutContainer.dart';
+import 'package:fitproo/screens/user/advanced/advanced.dart';
+import 'package:fitproo/screens/user/beginner/beginner.dart';
+import 'package:fitproo/screens/user/intermediate/intermediate.dart';
+import 'package:fitproo/widget/colors.dart';
+import 'package:fitproo/widget/custom_appbar.dart';
+import 'package:fitproo/widget/endDrawer.dart';
+import 'package:fitproo/widget/customWorkoutContainer.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 

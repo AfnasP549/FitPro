@@ -1,10 +1,10 @@
-import 'package:fitpro/db_functions/database_db.dart';
-import 'package:fitpro/models/advanced_model/advancedWorkout_model.dart';
-import 'package:fitpro/screens/admin/adminhome.dart';
-import 'package:fitpro/widget/colors.dart';
-import 'package:fitpro/widget/customTextFormField.dart';
-import 'package:fitpro/widget/custom_appbar.dart';
-import 'package:fitpro/widget/validation.dart';
+import 'package:fitproo/db_functions/database_db.dart';
+import 'package:fitproo/models/advanced_model/advancedWorkout_model.dart';
+import 'package:fitproo/screens/admin/adminhome.dart';
+import 'package:fitproo/widget/colors.dart';
+import 'package:fitproo/widget/customTextFormField.dart';
+import 'package:fitproo/widget/custom_appbar.dart';
+import 'package:fitproo/widget/validation.dart';
 import 'package:flutter/material.dart';
 
 class AdvancedAdd extends StatelessWidget {

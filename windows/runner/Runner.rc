@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "com.example" "\0"
-            VALUE "FileDescription", "fitpro" "\0"
+            VALUE "FileDescription", "fitproo" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "fitpro" "\0"
+            VALUE "InternalName", "fitproo" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2024 com.example. All rights reserved." "\0"
-            VALUE "OriginalFilename", "fitpro.exe" "\0"
-            VALUE "ProductName", "fitpro" "\0"
+            VALUE "OriginalFilename", "fitproo.exe" "\0"
+            VALUE "ProductName", "fitproo" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

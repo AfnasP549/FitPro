@@ -1,5 +1,5 @@
 
-import 'package:fitpro/widget/colors.dart';
+import 'package:fitproo/widget/colors.dart';
 import 'package:flutter/material.dart';
 
 customAppBar(BuildContext context,{

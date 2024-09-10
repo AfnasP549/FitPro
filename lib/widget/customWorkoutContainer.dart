@@ -2,7 +2,7 @@
 
 import 'dart:ui' show FontWeight;
 
-import 'package:fitpro/widget/colors.dart';
+import 'package:fitproo/widget/colors.dart';
 import 'package:flutter/material.dart';
 
 class CustomWorkoutContainer extends StatelessWidget {

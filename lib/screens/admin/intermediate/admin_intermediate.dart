@@ -1,10 +1,10 @@
-import 'package:fitpro/db_functions/database_db.dart';
-import 'package:fitpro/models/intermediate_model/intermediateWorkout_model.dart';
-import 'package:fitpro/screens/admin/intermediate/intermediate_add.dart';
-import 'package:fitpro/screens/admin/intermediate/intermediate_edit.dart';
-import 'package:fitpro/widget/colors.dart';
-import 'package:fitpro/widget/custom_appbar.dart';
-import 'package:fitpro/widget/delete_alert.dart';
+import 'package:fitproo/db_functions/database_db.dart';
+import 'package:fitproo/models/intermediate_model/intermediateWorkout_model.dart';
+import 'package:fitproo/screens/admin/intermediate/intermediate_add.dart';
+import 'package:fitproo/screens/admin/intermediate/intermediate_edit.dart';
+import 'package:fitproo/widget/colors.dart';
+import 'package:fitproo/widget/custom_appbar.dart';
+import 'package:fitproo/widget/delete_alert.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 

@@ -1,8 +1,8 @@
-import 'package:fitpro/models/advanced_model/advancedWorkout_model.dart';
-import 'package:fitpro/screens/user/workout.dart';
-import 'package:fitpro/screens/user/excercise_details.dart';
-import 'package:fitpro/widget/colors.dart';
-import 'package:fitpro/widget/custom_appbar.dart';
+import 'package:fitproo/models/advanced_model/advancedWorkout_model.dart';
+import 'package:fitproo/screens/user/workout.dart';
+import 'package:fitproo/screens/user/excercise_details.dart';
+import 'package:fitproo/widget/colors.dart';
+import 'package:fitproo/widget/custom_appbar.dart';
 import 'package:flutter/material.dart';
 
 // ignore: camel_case_types

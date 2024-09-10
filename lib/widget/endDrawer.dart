@@ -1,11 +1,11 @@
 // ignore_for_file: file_names
 
-import 'package:fitpro/screens/admin/admin_login.dart';
-import 'package:fitpro/screens/user/about.dart';
-import 'package:fitpro/screens/user/privacy_policy.dart';
-import 'package:fitpro/screens/user/profile.dart';
-import 'package:fitpro/screens/user/termsandconditon.dart';
-import 'package:fitpro/widget/colors.dart';
+import 'package:fitproo/screens/admin/admin_login.dart';
+import 'package:fitproo/screens/user/about.dart';
+import 'package:fitproo/screens/user/privacy_policy.dart';
+import 'package:fitproo/screens/user/profile.dart';
+import 'package:fitproo/screens/user/termsandconditon.dart';
+import 'package:fitproo/widget/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 

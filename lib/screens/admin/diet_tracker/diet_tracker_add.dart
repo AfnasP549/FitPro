@@ -2,15 +2,15 @@
 
 
 
-import 'package:fitpro/db_functions/diet_tracker_db.dart';
-import 'package:fitpro/models/diet_tracker_model/diet_tracker_model.dart';
-import 'package:fitpro/screens/admin/adminhome.dart';
+import 'package:fitproo/db_functions/diet_tracker_db.dart';
+import 'package:fitproo/models/diet_tracker_model/diet_tracker_model.dart';
+import 'package:fitproo/screens/admin/adminhome.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:io';
 
-import 'package:fitpro/widget/colors.dart';
-import 'package:fitpro/widget/custom_appbar.dart';
+import 'package:fitproo/widget/colors.dart';
+import 'package:fitproo/widget/custom_appbar.dart';
 
 class DietTrackerAdd extends StatefulWidget {
   final String category;

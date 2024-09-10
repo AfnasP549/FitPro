@@ -1,5 +1,5 @@
-import 'package:fitpro/widget/colors.dart';
-import 'package:fitpro/widget/customAdminContainer.dart';
+import 'package:fitproo/widget/colors.dart';
+import 'package:fitproo/widget/customAdminContainer.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 

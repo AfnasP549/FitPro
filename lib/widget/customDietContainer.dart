@@ -1,10 +1,9 @@
 import 'dart:developer';
 
-import 'package:fitpro/db_functions/diet_tracker_db.dart';
-import 'package:fitpro/models/diet_tracker_model/diet_tracker_model.dart';
-import 'package:fitpro/screens/admin/diet_tracker/diet_tracker_add.dart';
+import 'package:fitproo/db_functions/diet_tracker_db.dart';
+import 'package:fitproo/models/diet_tracker_model/diet_tracker_model.dart';
+import 'package:fitproo/screens/admin/diet_tracker/diet_tracker_add.dart';
 
-import 'package:fitpro/widget/colors.dart';
 import 'package:flutter/material.dart';
 
 class CustomDietContainer extends StatelessWidget {

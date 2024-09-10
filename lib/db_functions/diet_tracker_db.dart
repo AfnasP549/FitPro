@@ -2,7 +2,7 @@
 
 import 'dart:developer';
 
-import 'package:fitpro/models/diet_tracker_model/diet_tracker_model.dart';
+import 'package:fitproo/models/diet_tracker_model/diet_tracker_model.dart';
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
 

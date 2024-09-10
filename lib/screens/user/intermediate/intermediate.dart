@@ -1,10 +1,10 @@
-import 'package:fitpro/db_functions/database_db.dart';
-import 'package:fitpro/models/intermediate_model/intermediateWorkout_model.dart';
-import 'package:fitpro/screens/admin/adminhome.dart';
-import 'package:fitpro/screens/user/excercise_details.dart';
-import 'package:fitpro/screens/user/intermediate/favorite_.dart';
-import 'package:fitpro/screens/user/workout.dart';
-import 'package:fitpro/widget/colors.dart';
+import 'package:fitproo/db_functions/database_db.dart';
+import 'package:fitproo/models/intermediate_model/intermediateWorkout_model.dart';
+import 'package:fitproo/screens/admin/adminhome.dart';
+import 'package:fitproo/screens/user/excercise_details.dart';
+import 'package:fitproo/screens/user/intermediate/favorite_.dart';
+import 'package:fitproo/screens/user/workout.dart';
+import 'package:fitproo/widget/colors.dart';
 import 'package:flutter/material.dart';
 
 class Intermediate extends StatefulWidget {
@@ -93,15 +93,23 @@ class _IntermediateState extends State<Intermediate> {
           ),
         ],
       ),
-      body: Column(
-        children: [
-          Expanded(
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: ValueListenableBuilder(
-                valueListenable: interMediateWorkoutList,
-                builder: (context, workouts, child) {
-                  return ListView.separated(
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: ValueListenableBuilder(
+          valueListenable: interMediateWorkoutList,
+          builder: (context, workouts, child) {
+            
+              if (workouts.isEmpty) {
+        return const Center(
+            child: Text(
+          'empty',
+          style: TextStyle(color: MyColors.White),
+        ));
+      }
+            return Column(
+              children: [
+                Expanded(
+                  child: ListView.separated(
                     itemBuilder: (context, index) {
                       final workout = workouts[index];
                       return ListTile(
@@ -140,39 +148,39 @@ class _IntermediateState extends State<Intermediate> {
                     },
                     separatorBuilder: (context, index) => const Divider(),
                     itemCount: workouts.length,
-                  );
-                },
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: SizedBox(
-              width: double.infinity,
-              child: ElevatedButton(
-                onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                    builder: (ctx) => Workout(
-                      workoutList: interMediateWorkoutList.value,
-                    ),
-                  ));
-                },
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: MyColors.White,
-                  padding: const EdgeInsets.symmetric(vertical: 15.0),
-                ),
-                child: const Text(
-                  'START',
-                  style: TextStyle(
-                    color: MyColors.Black,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 16.0,
                   ),
                 ),
+                 Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: SizedBox(
+        width: double.infinity,
+        child: ElevatedButton(
+          onPressed: () {
+            Navigator.of(context).push(MaterialPageRoute(
+              builder: (ctx) => Workout(
+                workoutList: interMediateWorkoutList.value,
               ),
+            ));
+          },
+          style: ElevatedButton.styleFrom(
+            backgroundColor: MyColors.White,
+            padding: const EdgeInsets.symmetric(vertical: 15.0),
+          ),
+          child: const Text(
+            'START',
+            style: TextStyle(
+              color: MyColors.Black,
+              fontWeight: FontWeight.bold,
+              fontSize: 16.0,
             ),
           ),
-        ],
+        ),
+      ),
+            ),
+              ],
+            );
+          },
+        ),
       ),
     );
   }

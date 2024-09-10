@@ -1,4 +1,4 @@
-# fitpro
+# fitproo
 
 A new Flutter project.
 

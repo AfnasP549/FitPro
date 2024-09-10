@@ -1,11 +1,11 @@
-import 'package:fitpro/db_functions/database_db.dart';
-import 'package:fitpro/models/intermediate_model/intermediateWorkout_model.dart';
-import 'package:fitpro/widget/custom_appbar.dart';
+import 'package:fitproo/db_functions/database_db.dart';
+import 'package:fitproo/models/intermediate_model/intermediateWorkout_model.dart';
+import 'package:fitproo/widget/custom_appbar.dart';
 import 'package:flutter/material.dart';
-import 'package:fitpro/models/beginner_model/beginnerWorkout_model.dart';
-import 'package:fitpro/screens/user/excercise_details.dart';
-import 'package:fitpro/screens/user/workout.dart';
-import 'package:fitpro/widget/colors.dart';
+import 'package:fitproo/models/beginner_model/beginnerWorkout_model.dart';
+import 'package:fitproo/screens/user/excercise_details.dart';
+import 'package:fitproo/screens/user/workout.dart';
+import 'package:fitproo/widget/colors.dart';
 
 class Favorite extends StatefulWidget {
   final List<BeginnerWorkoutModel> favoriteWorkouts;

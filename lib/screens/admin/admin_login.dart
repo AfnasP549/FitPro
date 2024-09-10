@@ -1,4 +1,4 @@
-import 'package:fitpro/screens/admin/adminhome.dart';
+import 'package:fitproo/screens/admin/adminhome.dart';
 import 'package:flutter/material.dart';
 
 class AdminLogin extends StatefulWidget {
